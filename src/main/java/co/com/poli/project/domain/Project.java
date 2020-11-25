@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tbl_Projects")
+@Table(name = "tbl_Projects",uniqueConstraints = {@UniqueConstraint(columnNames = "project_identifier"),@UniqueConstraint(columnNames = "project_name")})
 public class Project {
 
     @Id
