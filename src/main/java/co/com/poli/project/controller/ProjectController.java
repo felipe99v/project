@@ -34,7 +34,7 @@ public class ProjectController {
         }
         return ResponseEntity.ok(projects);
     }
-
+    /*
     @GetMapping(value = "/{id}")
     public ResponseEntity<Project> getProject(@PathVariable("id") Long id) {
         Project project = projectService.getProject(id);
@@ -42,11 +42,11 @@ public class ProjectController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(project);
-    }
+    }*/
 
-    @GetMapping
-    public ResponseEntity<Project> getProjectByProjectIdentifier(@RequestParam(name = "projectidentifier") String projectidentifier) {
-        Project project = projectService.findByProjectIdentifier(projectidentifier);
+    @GetMapping(value = "/{project_identifier}")
+    public ResponseEntity<Project> getProjectByProjectIdentifier(@PathVariable String project_identifier) {
+        Project project = projectService.findByProjectIdentifier(project_identifier);
         if (project == null) {
             return ResponseEntity.notFound().build();
         }
