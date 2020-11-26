@@ -2,7 +2,6 @@ package co.com.poli.project.service;
 
 import co.com.poli.project.domain.Project;
 import co.com.poli.project.repository.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,8 +9,12 @@ import java.util.List;
 @Service
 public class ProjectServiceLmpl implements ProjectService{
 
-    @Autowired
-    private ProjectRepository projectRepository;
+
+    private final ProjectRepository projectRepository;
+
+    public ProjectServiceLmpl(ProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
+    }
 
     @Override
     public List<Project> getAllProject() {
