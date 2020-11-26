@@ -48,4 +48,9 @@ public class ProjectServiceLmpl implements ProjectService{
     public Project deleteProject(Long id) {
         return null;
     }
+
+    @Override
+    public Project findByProjectIdentifier(String projectIdentifier) {
+        return projectRepository.findByProjectIdentifier(projectIdentifier);
+    }
 }

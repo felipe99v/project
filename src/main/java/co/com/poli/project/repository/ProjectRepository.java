@@ -10,4 +10,6 @@ import java.util.List;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
     @Override
     List<Project> findAll();
+
+    Project findByProjectIdentifier(String projectIdentifier);
 }

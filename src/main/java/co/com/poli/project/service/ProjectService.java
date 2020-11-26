@@ -14,4 +14,6 @@ public interface ProjectService {
     Project updateProject(Project project);
 
     Project deleteProject(Long id);
+
+    Project findByProjectIdentifier(String projectIdentifier);
 }
